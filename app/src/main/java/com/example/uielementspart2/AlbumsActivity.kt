@@ -35,12 +35,12 @@ class AlbumsActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     private fun setDataList(): ArrayList<Album>{
         val arrayList: ArrayList<Album> = ArrayList()
 
-        val pentakillSongs: Array<String> = arrayOf("Mortal Reminder", "Deathfire Grasp", "Lightbringer", "The Bloodthirster",
+        val pentakillSongs: ArrayList<String> = arrayListOf("Mortal Reminder", "Deathfire Grasp", "Lightbringer", "The Bloodthirster",
             "Orb of Winter", "Edge of Infinity", "Frozen Heart", "Tear of the Goddess", "Blade of the Ruined King", "Last Whisper")
-        val kdaSongs: Array<String> = arrayOf("Pop/Stars", "The Baddest", "More", "Villain", "Drum Go Dum", "I'll Show You")
-        val leagueSongs: Array<String> = arrayOf("Rise", "Phoenix", "Take Over", "Legends Never Die")
-        val trueDamageSongs: Array<String> = arrayOf("Giants")
-        val warSongs: Array<String> = arrayOf("Piercing Light", "Edge of Inifinity", "PROJECT: YI", "Worlds Collide", "The Boy Who Shattered Time")
+        val kdaSongs: ArrayList<String> = arrayListOf("Pop/Stars", "The Baddest", "More", "Villain", "Drum Go Dum", "I'll Show You")
+        val leagueSongs: ArrayList<String> = arrayListOf("Rise", "Phoenix", "Take Over", "Legends Never Die")
+        val trueDamageSongs: ArrayList<String> = arrayListOf("Giants")
+        val warSongs: ArrayList<String> = arrayListOf("Piercing Light", "Edge of Infinity", "PROJECT: YI", "Worlds Collide", "The Boy Who Shattered Time")
 
         arrayList.add(Album(R.drawable.pentakill, "Pentakill", pentakillSongs))
         arrayList.add(Album(R.drawable.kda, "K/DA", kdaSongs))

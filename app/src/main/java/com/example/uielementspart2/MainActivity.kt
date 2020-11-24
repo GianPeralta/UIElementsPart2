@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     lateinit var songsArray: Array<String>
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val songsListView = findViewById<ListView>(R.id.songsListView)
         songsListView.adapter = adapter
         registerForContextMenu(songsListView)
+
 
     }
 
@@ -44,6 +46,14 @@ class MainActivity : AppCompatActivity() {
                 val listPosition = info.position
                 val song = songsArray[listPosition]
                 songs.add(song)
+
+                val snackbar = Snackbar.make(getWindow().getDecorView().findViewById(android.R.id.content), "Song added to queue", Snackbar.LENGTH_LONG)
+                snackbar.setAction("Go to queue", View.OnClickListener{
+                    val intent = Intent(applicationContext, QueueActivity::class.java)
+                    intent.putExtra("Song", songs)
+                    startActivity(intent)
+                })
+                snackbar.show()
                 true
             }
             else -> super.onContextItemSelected(item)
