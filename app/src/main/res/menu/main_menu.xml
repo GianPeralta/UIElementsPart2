@@ -5,7 +5,13 @@
         android:title="Albums">
     </item>
     <item android:id="@+id/go_to_queue_page"
-        android:title="Queue"
+        android:title="Queue">
+    </item>
+    <item android:id="@+id/go_to_songs_page"
+        android:title="Songs">
+    </item>
+    <item android:id="@+id/create_song"
+        android:title="Create song"
         app:showAsAction="ifRoom">
     </item>
 </menu>

@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AlbumDetailsActivity"></activity>
+        <activity android:name=".EditAlbumActivity"></activity>
+        <activity android:name=".CreateAlbumActivity" />
         <activity android:name=".AlbumsActivity" />
+        <activity android:name=".EditSongActivity" />
+        <activity android:name=".CreateSongActivity" />
+        <activity android:name=".AlbumDetailsActivity" />
         <activity android:name=".QueueActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

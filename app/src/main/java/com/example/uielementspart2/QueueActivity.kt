@@ -29,6 +29,8 @@ class QueueActivity : AppCompatActivity() {
     lateinit var builder: Notification.Builder
     private val channelId = "i.apps.notifications"
     private val description = "Test notification"
+    lateinit var adapter: ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_queue)
@@ -63,8 +65,8 @@ class QueueActivity : AppCompatActivity() {
             }
             notificationManager.notify(1234,builder.build())
         }
-        val adapter =
-            songs?.let { ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, it) }
+        adapter =
+            songs?.let { ArrayAdapter(this, android.R.layout.simple_list_item_1, it) }!!
         val queued = findViewById<ListView>(R.id.queuedSongsList)
         queued.adapter = adapter
         registerForContextMenu(queued)
@@ -91,11 +93,7 @@ class QueueActivity : AppCompatActivity() {
                 val song = songs?.get(listPosition)
                 songs!!.remove(song)
 
-                Toast.makeText(applicationContext, "$song was removed from album", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(applicationContext, QueueActivity::class.java)
-                intent.putExtra("Song", songs)
-                startActivity(intent)
+                adapter.notifyDataSetChanged()
 
                 true
             }
